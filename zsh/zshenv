@@ -5,29 +5,33 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
-## Golang
-export GOROOT="/usr/local/opt/go/libexec"
-export GOPATH="$HOME/dev/golang"
+## Envs
 
 ## exports
-export HOMEBREW_MAKE_JOBS=4
-
 export SYS_PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
-export USER_BIN="./local/bin"
+export USER_BIN="$HOME/local/bin"
+export PATH="$SYS_PATH:$USER_BIN"
 
-## zplug
+### zplug
 if [ -d /usr/local/opt/zplug ]; then
   export ZPLUG_HOME="/usr/local/opt/zplug"
+  export PATH="$PATH:$ZPLUG_HOME"
 fi
 
-## anyenv
+### Golang
+if [ -x "`which go`" ]; then
+  export GOROOT="`go env GOROOT`"
+  export GOPATH="$HOME/dev/golang"
+  export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+fi
+
+### anyenv
 if [ -d $HOME/.anyenv ]; then
   export ANYENV="$HOME/.anyenv/bin"
   for D in `\ls $HOME/.anyenv/envs`
   do
     export ANYENV="$HOME/.anyenv/envs/$D/shims:$ANYENV"
   done
+  export PATH="$ANYENV:$PATH"
 fi
-
-export PATH="$ANYENV:$SYS_PATH:$USER_BIN:$ZPLUG_HOME:$GOROOT/bin:$GOPATH/bin"
 
