@@ -9,6 +9,7 @@ git clone git@github.com:fagahhe2645/dot-config .config
 
 ## init .zsh*
 Create symlink
+
 In .zhenv and .zshrc, source zsh/zshenv and zsh/zshrc
 ```
 cd ~
