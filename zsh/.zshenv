@@ -1,11 +1,8 @@
 # zsh env
-
-## Editor
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
-
-## Envs
+export LESS='-R'
 
 ## exports
 export SYS_PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
@@ -14,8 +11,8 @@ export PATH="$SYS_PATH:$USER_BIN"
 export FPATH="$HOME/.config/zsh/autoload:$FPATH"
 
 ### zplug
-if [ -d /usr/local/opt/zplug ]; then
-  export ZPLUG_HOME="/usr/local/opt/zplug"
+export ZPLUG_HOME="$HOME/.zplug"
+if [ -d $ZPLUG_HOME ]; then
   export PATH="$PATH:$ZPLUG_HOME"
 fi
 

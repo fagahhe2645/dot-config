@@ -2,7 +2,8 @@
 autoload -Uz source_file 
 
 # zplug init
-if [ -d /usr/local/opt/zplug ]; then
+# curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+if [ -d $ZPLUG_HOME ]; then
   source_file $HOME/.config/zsh/zplug.sh
 fi
 
@@ -10,7 +11,7 @@ fi
 HISTFILE=${ZDOTDIR}/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
-setopt hist_ignore_all_dups hist_ignore_dups hist_expand hist_ignore_space
+setopt hist_ignore_all_dups hist_ignore_dups hist_expand hist_ignore_space inc_append_history
 setopt extended_history share_history
 setopt autocd beep extendedglob notify
 bindkey -v
