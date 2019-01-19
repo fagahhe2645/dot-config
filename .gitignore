@@ -1,2 +1,15 @@
+# node
 configstore/*
+
+# b4b4r07/gist
 gist/*
+
+# vim
+*~
+**/*~
+*.swp
+**/*.swp
+
+# OS X
+.DS_Store
+**/.DS_Store

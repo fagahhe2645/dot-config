@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 source_file() {
   if [ $# -lt 1 ];then
     echo "ERROR!!! source_file is called w/o an argument"

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+# DUMMY .zshrc
+source ${ZDOTDIR}/.zshrc
