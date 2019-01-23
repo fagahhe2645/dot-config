@@ -29,5 +29,10 @@ fi
 ## chmod +x  "${HOME}/.config/zsh/.iterm2_shell_integration.zsh"
 source_file $HOME/.config/zsh/.iterm2_shell_integration.zsh
 
+# google-cloud-sdk
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
+
 # alias
 source_file $HOME/.config/zsh/zshalias.sh

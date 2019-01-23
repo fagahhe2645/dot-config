@@ -4,6 +4,13 @@ configstore/*
 # b4b4r07/gist
 gist/*
 
+# gcloud
+gcloud/*
+
+# yarn
+yarn/*
+configstore/*
+
 # vim
 *~
 **/*~

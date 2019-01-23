@@ -1,0 +1,12 @@
+{
+  "name": "dot-config",
+  "version": "0.3.0",
+  "main": "index.js",
+  "repository": "git@github.com:fagahhe2645/dot-config.git",
+  "author": "morimoto-shuya",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "update_npm-list": "npm --global list --depth=0 >> ./npm/npm-global-packages"
+  }
+}
