@@ -12,4 +12,5 @@ Create symlink
 ```
 cd ~
 ln -s .config/zsh/zshenv .zshenv
+ln -s .config/zsh/zshrc .zshrc
 ```
