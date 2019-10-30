@@ -1,0 +1,32 @@
+[core]
+	excludesfile = /Users/morimoto-shuya/.config/git/ignore
+	pager = lv -c
+	editor = vim
+	autocrlf = false
+	quotepath = false
+[user]
+	name = morimoto-shuya
+	email = morimoto-shuya@dmm.com
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree-Beta.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/morimoto-shuya/.config/git/commit_template
+[push]
+	default = current
+[alias]
+	stat = "log --stat --summary"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

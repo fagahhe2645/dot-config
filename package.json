@@ -8,5 +8,6 @@
   "private": true,
   "scripts": {
     "update_npm-list": "npm --global list --depth=0 >> ./npm/npm-global-packages"
-  }
+  },
+  "dependencies": {}
 }

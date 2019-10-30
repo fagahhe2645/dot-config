@@ -5,15 +5,22 @@ export PAGER='less'
 export LESS='-R'
 
 ## exports
-export SYS_PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+# PATH
+export SYS_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export USER_BIN="$HOME/local/bin"
 export PATH="$SYS_PATH:$USER_BIN"
-export FPATH="$HOME/.config/zsh/autoload:$FPATH"
+export FPATH="$ZDOTDIR/autoload:$FPATH"
+# OTHER
+export USER_OPT="$HOME/local/opt"
+export ZVENDORDIR="$ZDOTDIR/vendor"
 
 ### zplug
-export ZPLUG_HOME="$HOME/.zplug"
-if [ -d $ZPLUG_HOME ]; then
-  export PATH="$PATH:$ZPLUG_HOME"
+if [ -d $ZVENDORDIR/zplug ]; then
+  export ZPLUG_HOME="$ZVENDORDIR/zplug"
+fi
+### pure-prompt
+if [ -d $ZVENDORDIR/pure ]; then
+  export FPATH="$ZVENDORDIR/pure:$FPATH"
 fi
 
 ### Golang
@@ -24,12 +31,8 @@ if [ -x "`which go`" ]; then
 fi
 
 ### anyenv
-if [ -d $HOME/.anyenv ]; then
-  export ANYENV="$HOME/.anyenv/bin"
-  for D in `\ls $HOME/.anyenv/envs`
-  do
-    export ANYENV="$HOME/.anyenv/envs/$D/shims:$ANYENV"
-  done
-  export PATH="$ANYENV:$PATH"
+if [ -d $XDG_CONFIG_HOME/anyenv ]; then
+  export ANYENV_ROOT="$XDG_CONFIG_HOME/anyenv"
+  export PATH="$ANYENV_ROOT/bin:$PATH"
 fi
 

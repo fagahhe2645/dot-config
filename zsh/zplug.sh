@@ -38,7 +38,9 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-autoload -U promptinit; promptinit
+
+# load pure-prompt
+autoload -Uz promptinit && promptinit
 
 PURE_CMD_MAX_EXEC_TIME=10
 

@@ -1,10 +1,10 @@
 # autoload functions
-autoload -Uz source_file 
+autoload -U source_file 
 
 # zplug init
 # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 if [ -d $ZPLUG_HOME ]; then
-  source_file $HOME/.config/zsh/zplug.sh
+  source_file $ZDOTDIR/zplug.sh
 fi
 
 # zsh settings
@@ -20,7 +20,7 @@ autoload -Uz compinit; compinit -d ${ZDOTDIR}/.zcompdump
 
 
 ## anyenv
-if [ -d $HOME/.anyenv ]; then
+if [ -d $XDG_CONFIG_HOME/anyenv ]; then
   eval "$(anyenv init -)"
 fi
 
@@ -30,9 +30,9 @@ fi
 source_file $HOME/.config/zsh/.iterm2_shell_integration.zsh
 
 # google-cloud-sdk
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 
 # alias
-source_file $HOME/.config/zsh/zshalias.sh
+source_file $ZDOTDIR/zshalias.sh

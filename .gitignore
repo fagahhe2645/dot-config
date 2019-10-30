@@ -11,12 +11,5 @@ gcloud/*
 yarn/*
 configstore/*
 
-# vim
-*~
-**/*~
-*.swp
-**/*.swp
-
-# OS X
-.DS_Store
-**/.DS_Store
+# anyenv
+anyenv/*
